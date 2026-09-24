@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#eef2f8"/><text x="256" y="256" dy=".35em" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="700" font-size="280" fill="#eceef3">数</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#eef2f8"/>
+  <circle cx="176" cy="246" r="78" fill="#e0603f"/>
+  <circle cx="336" cy="246" r="78" fill="#1f9a86"/>
+  <text x="176" y="246" dy=".37em" text-anchor="middle" font-family="system-ui,-apple-system,'Hiragino Sans',sans-serif" font-weight="800" font-size="78" fill="#ffffff">%</text>
+  <text x="336" y="246" dy=".37em" text-anchor="middle" font-family="system-ui,-apple-system,'Hiragino Sans',sans-serif" font-weight="700" font-size="88" fill="#ffffff">&#8721;</text>
+  <rect x="110" y="316" width="292" height="34" rx="16" fill="#1b2233"/>
+  <rect x="150" y="350" width="26" height="54" rx="8" fill="#1b2233"/>
+  <rect x="336" y="350" width="26" height="54" rx="8" fill="#1b2233"/>
+</svg>
