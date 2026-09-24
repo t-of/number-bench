@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eef2f8">
+  <meta name="description" content="当たる確率や人生の体感時間など、ふと気になった数をすぐ計算する道具を集めた箱。つまみを動かすと、答えとグラフがその場で変わる。">
+  <title>数の道具箱 — 確率も体感時間も、すぐ計算</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="数の道具箱">
+  <meta property="og:title" content="数の道具箱 — 確率も体感時間も、すぐ計算">
+  <meta property="og:description" content="当たる確率や人生の体感時間など、ふと気になった数をすぐ計算する道具を集めた箱。つまみを動かすと、答えとグラフがその場で変わる。">
+  <meta property="og:url" content="https://t-of.github.io/math-tools/">
+  <meta property="og:image" content="https://t-of.github.io/math-tools/icons/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- apple-mobile-web-app-status-bar-style は付けない（black-translucent だと iOS 26 で上部が隠れる） -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="数の道具箱">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="./webapp-kit/webapp-kit.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="bar">
+      <button class="back" id="backBtn" hidden>← 一覧</button>
+      <h1 class="bar__title" id="barTitle">数の道具箱</h1>
+      <button class="icon-btn" id="soundBtn" aria-pressed="true" aria-label="音: オン">
+        <svg viewBox="0 0 24 24" aria-hidden="true" id="soundIcon"></svg>
+      </button>
+      <button class="icon-btn" id="helpBtn" aria-label="使い方">?</button>
+    </header>
+
+    <!-- 一覧 -->
+    <section class="home" id="home">
+      <ul class="cards" id="toolList"></ul>
+
+      <h2 class="home__head">ほかの数のアプリ</h2>
+      <ul class="cards">
+        <li><a class="card" href="../number-patterns/">
+          <img class="card__icon" src="../number-patterns/icons/icon-192.png" alt="" width="44" height="44">
+          <span class="card__text"><b>数の模様</b><small>素数のらせんや星形など、数が描く模様を眺める</small></span>
+        </a></li>
+        <li><a class="card" href="../tsumitate/">
+          <img class="card__icon" src="../tsumitate/icons/icon-192.png" alt="" width="44" height="44">
+          <span class="card__text"><b>積立投資シミュレーター</b><small>毎月の積み立てが、何年後にいくらになるか</small></span>
+        </a></li>
+      </ul>
+
+      <div class="home__foot">
+        <button class="pill" data-wak="install" hidden>アプリにする</button>
+        <button class="pill" data-wak="share">共有</button>
+      </div>
+      <footer class="credit"><a href="/">T.OF...</a> のアプリ</footer>
+    </section>
+
+    <!-- 道具の画面。中身は各道具の mount() が作る -->
+    <section class="tool" id="tool" hidden></section>
+  </main>
+
+  <div class="help" id="help" hidden>
+    <div class="help__box" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+      <h2 id="helpTitle">使い方</h2>
+      <ol>
+        <li>一覧から道具を選ぶ。</li>
+        <li>数字の横の − ＋ を押すか、数字をタップして打つ。答えとグラフはすぐ変わる。− ＋ は長押しで続けて動く。</li>
+        <li>左上の「← 一覧」で戻る。入れた数は道具ごとに覚えておく。</li>
+      </ol>
+      <button class="btn" id="helpClose">はじめる</button>
+    </div>
+  </div>
+
+  <script src="./webapp-kit/webapp-kit.js"></script>
+  <script src="./app.js"></script>
+  <!-- 道具は 1 つ 1 行。並び順 = 一覧の順 -->
+  <script src="./tools/chance.js"></script>
+  <script src="./tools/life-time.js"></script>
+</body>
+</html>
