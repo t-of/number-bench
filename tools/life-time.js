@@ -10,7 +10,7 @@
   const PRESETS = [['20 歳まで', 0, 20], ['小学校の 6 年', 6, 12], ['20 歳から先', 20, null], ['65 歳から先', 65, null]];
   const int = (v) => Number.isInteger(v);
 
-  MathTools.add({
+  NumberBench.add({
     id: 'life-time',
     name: '人生の体感時間',
     lead: '年をとるほど 1 年が短く感じる（ジャネーの法則）とすると、何歳から何歳までが、体感で人生の何 % にあたるか。',

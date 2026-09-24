@@ -67,7 +67,7 @@
   const X_STEPS = [50, 60, 70, 80, 90, 95, 99, 99.9];
   const int = (v) => Number.isInteger(v);
 
-  MathTools.add({
+  NumberBench.add({
     id: 'chance',
     name: '当たる確率',
     lead: '当たる確率が ◯ % のくじを何回か引いたとき、何回以上当たる確率はどれくらいか。何回引けばよいかも出す。',

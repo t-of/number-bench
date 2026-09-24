@@ -1,16 +1,16 @@
 'use strict';
 // 器: 一覧を作る・ハッシュで道具を切り替える・道具が使う共通の部品（kit）。
-// 道具は tools/<id>.js に 1 つずつあり、MathTools.add({...}) で自分を登録する。
+// 道具は tools/<id>.js に 1 つずつあり、NumberBench.add({...}) で自分を登録する。
 
 // アプリの名前はここだけに書く（画面の見出し・タブの題・共有の文に使う）。
 // <head>・manifest・README の名前は別に書いてあるので、名前を変えるときはそちらも直す。
-const APP_NAME = '数の道具箱';
+const APP_NAME = 'NUMBER BENCH';
 const APP_TITLE = '確率も体感時間も、すぐ計算';
 const APP_TEXT = '当たる確率や人生の体感時間など、ふと気になった数をすぐ計算する道具を集めた箱。つまみを動かすと、答えとグラフがその場で変わる。';
 
 // localStorage はほかのアプリと共有される（同じ t-of.github.io のため）。
-// キーは必ず 'math-tools.' で始める。道具の値は 'math-tools.<道具の id>'。
-const STORE = 'math-tools.';
+// キーは必ず 'number-bench.' で始める。道具の値は 'number-bench.<道具の id>'。
+const STORE = 'number-bench.';
 
 function load(key) {
   try { return JSON.parse(localStorage.getItem(STORE + key)); } catch { return null; }
@@ -20,7 +20,7 @@ function save(key, value) {
 }
 
 const TOOLS = [];
-window.MathTools = { add: (tool) => TOOLS.push(tool) };
+window.NumberBench = { add: (tool) => TOOLS.push(tool) };
 
 WebAppKit.init({ title: APP_NAME, text: APP_TEXT });
 

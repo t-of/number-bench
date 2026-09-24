@@ -1,10 +1,10 @@
-# 数の道具箱 — 確率も体感時間も、すぐ計算
+# NUMBER BENCH — 確率も体感時間も、すぐ計算
 
 当たる確率や人生の体感時間など、ふと気になった数をすぐ計算する道具を集めた箱。つまみを動かすと、答えとグラフがその場で変わる。
 
 ## 🔗 リンク
 
-- 遊ぶ: https://t-of.github.io/math-tools/
+- 遊ぶ: https://t-of.github.io/number-bench/
 - 制作: [T.OF...](https://t-of.github.io/)
 
 ## 遊び方
@@ -36,10 +36,10 @@ node test.mjs                 # 道具の計算のテスト
 
 道具 1 つ = ファイル 1 つ（`tools/<道具の id>.js`）。
 
-1. `tools/<id>.js` に `MathTools.add({ id, name, lead, mark, color, defaults, valid, calc, mount })` を書く。
+1. `tools/<id>.js` に `NumberBench.add({ id, name, lead, mark, color, defaults, valid, calc, mount })` を書く。
    `calc` は DOM を触らない計算の関数だけ。`mount(el, kit, state)` で画面を作り、値が変わったら `kit.save(state)`。
 2. `index.html` の道具の `<script>` の並びに 1 行足す（並び順 = 一覧の順）。
 3. `sw.js` の `SHELL` に 1 行足す。
 4. `test.mjs` にその道具の確かめ用の値を足す。
 
-`kit`（app.js）にある部品: 数の行 `row`、対数目盛りのスライダー `slider`、SVG グラフの下地 `chart`、音 `sound`、保存 `load` / `save`（キーは `math-tools.<道具の id>`）、共有 `share`、数の書き方 `pct` / `num`。
+`kit`（app.js）にある部品: 数の行 `row`、対数目盛りのスライダー `slider`、SVG グラフの下地 `chart`、音 `sound`、保存 `load` / `save`（キーは `number-bench.<道具の id>`）、共有 `share`、数の書き方 `pct` / `num`。

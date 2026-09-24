@@ -1,11 +1,11 @@
 // 道具の計算のテスト。node test.mjs で走る（フレームワークなし）。
-// tools/*.js を、MathTools.add だけを置いた入れ物で読み、各道具の calc を確かめる。道具を足したら、ここにもその道具の表を足す。
+// tools/*.js を、NumberBench.add だけを置いた入れ物で読み、各道具の calc を確かめる。道具を足したら、ここにもその道具の表を足す。
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 
 const tools = {};
-const box = vm.createContext({ MathTools: { add: (t) => { tools[t.id] = t; } } });
+const box = vm.createContext({ NumberBench: { add: (t) => { tools[t.id] = t; } } });
 for (const f of fs.readdirSync(new URL('./tools/', import.meta.url))) {
   vm.runInContext(fs.readFileSync(new URL(`./tools/${f}`, import.meta.url), 'utf8'), box, { filename: f });
 }
